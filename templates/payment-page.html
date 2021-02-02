@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Payment</title>
+    <link rel="stylesheet" href="/static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="/static/assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="/static/static/assets/css/smoothproducts.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="{{ url_for('home') }}" >Ticket </a> <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('home') }}">Home</a></li>
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('profile') }}">Profile</a></li>
+                    {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('register') }}">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
+                    {% endif %}
+    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <main class="page payment-page">
+        <section class="clean-block payment-form dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Payment</h2>
+                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                    -->
+                    </div>
+
+                <div class="products">
+                    <h3 class="title">booking</h3>
+                    <div class="item"><span class="price">${{booking.totall}}</span>
+                        <p class="item-name">{{booking.travel_from}}</p>
+                        <p class="item-description">adult:{{booking.adult}}<br>student:{{booking.student}}<br>child:{{booking.child}}<br>child:{{booking.retired}}</p>
+                        <div class="form-group"><a href="{{ url_for('home') }}" class="btn btn-danger">Delete</a></div>
+                    </div>
+
+                </div>
+
+                <form action="" method="post">
+                    {{ form.csrf_token }}
+                    <div class="card-details">
+                        <h3 class="title">Credit Card Details</h3>
+                        <div class="form-row">
+                            <div class="col-sm-12">
+                                <div class="form-group"><label for="card-holder">Card Number</label>
+                                    {{form.cart_naumber (class="form-control")}}
+                                    </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="form-group"><label>Expiration date</label>
+                                    <div class="input-group expiration-date">
+                                        {{form.date_mm (class="form-control")}}
+                                        {{form.date_yy (class="form-control")}}
+                                </div>
+                            </div>
+
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group"><label for="cvc">CVC</label>
+                                    {{form.cvv (class="form-control")}}
+
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Proceed</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <script src="/static/assets/js/jquery.min.js"></script>
+    <script src="/static/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="/static/assets/js/smoothproducts.min.js"></script>
+    <script src="/static/assets/js/theme.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+{% extends 'newbase.html' %}
+
+    {% block content %}
+ 
+    {% include 'inc/navbar.html' %}
+
+    <div class="container">
+        <div class="block-heading">
+            <h2 class="text-info">Detail Ticket</h2>
+            <p>passneger number</p>
+        </div>
+        <div class="container">
+            <div class="card-dark">
+                <h3>Travel From: {{ ticket.travel_from }}</h3>
+              </div>
+              <div class="col-sm">
+                <h3>Travel To: {{ ticket.travel_to }}</h3>
+              </div>
+              <div class="col-sm">
+                <h3>With:{{ ticket.travel_with }}</h3>
+              </div>
+              <div class="col-sm">
+                <h3>Date:{{ ticket.date }}</h3>
+              </div>
+              <div class="col-sm">
+                <h3>Price:${{ ticket.price }}</h3>
+              </div>
+            </div>
+          </div>
+        </div>    
+            <div class="col-md-5">
+              <h4>passneger Number</h4>
+                <form action="" method="post">                    
+                    {{ form.csrf_token }}
+                    <p>Adult</p> 
+                    {{ form.adult (class="form-control") }}<br>
+                    <p>Student (7-17) half price </p> 
+                    {{ form.student (class="form-control")}}<br>
+                    <p>child (0-7) free </p> 
+                    {{ form.child (class="form-control")}}<br>
+                    <p>retired half price </p> 
+                    {{ form.retired (class="form-control")}}<br>
+                    <input type="submit" value="buy" class="btn btn-info">
+                </form>
+
+    </div>
+</div>    
+    {% endblock %}

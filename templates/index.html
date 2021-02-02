@@ -1,0 +1,67 @@
+{% extends 'newbase.html' %}
+
+    {% block content %}
+ 
+    {% include 'inc/navbar.html' %}
+  <form action="" method="post">
+    {{ form.csrf_token }}
+   
+    <div class="container">
+        <div class="block-heading">
+    
+    <div class="card-details">
+        <h3 class="title"></h3>
+        <div class="form-row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <div class="input-group">
+                        {{form.travel_from (class="form-control")}}
+                        {{form.travel_to (class="form-control")}}
+                        {{form.travel_with (class="form-control")}}
+                        {{form.date (calss="form-control")}}
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+            </div>
+            <div class="col-sm-4">
+  <!-- 
+                <div class="form-group">
+                    <input class="form-control" type="text" id="cvc" placeholder="date"></div>
+       -->
+                </div>
+            <div class="col-sm-12">
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Proceed</button></div>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+
+                </div>
+            </div>
+        </section>
+        <section class="clean-block  slider dark">
+            <div class="container">
+                <div class="card">
+                    <div class="card-body">
+                        {% for ticket in tickets %} 
+                          <a href="{{ url_for('detail',ticket_id=ticket.id) }}"  >form : {{ ticket.travel_from }}<br> to : {{ticket.travel_to}}<br> </a></h4>
+                        <p> ticket_with : {{ticket.travel_with}}<br> date: {{ticket.date}} {{ticket.ghaymat}}</p>  
+                        {% endfor %}              
+                      </div>
+                  </div>
+                  </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="clean-block slider dark">
+            <div class="container">
+                
+            </div>
+        </section>
+        {% endblock %}

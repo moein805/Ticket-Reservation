@@ -1,0 +1,28 @@
+{% extends 'newbase.html' %}
+
+
+
+{% block content %} 
+{% include 'inc/navbar.html' %}
+
+                <div class="block-heading">
+                    <h2 class="text-info">Log In</h2>
+                    {% include 'inc/form_errors.html' %}
+                </div>
+                <form action="" method="POST">
+                    {{ form.csrf_token }}
+                    <div >
+                        {{ form.email.label (class="form-group")}}
+                        {{ form.email (class="form-control")}}
+                    <div >
+                        {{ form.password.label (class="form-group")}}
+                         {{ form.password (class="form-control")}}
+                        <div class="form-group">
+                        <div class="form-check">
+                            {{ form.remember (class="form-check-input") }}
+                            {{ form.remember.label (class="form-check-label") }}
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">Log In</button>
+                </form>
+                {% endblock %}
