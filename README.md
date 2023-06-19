@@ -22,12 +22,12 @@ This project is a ticket reservation system for various modes of transportation,
 
 1. Clone the project repository:
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/moein805/Ticket-Reservation.git
 ```
 
 2. Navigate to the project directory:
 ```bash
-cd your-repo
+cd Ticket-Reservation
 ```
 
 3. Install dependencies using a package manager (e.g., pip):
