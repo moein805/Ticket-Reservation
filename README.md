@@ -1,21 +1,22 @@
-Sure! Here is the English version of the README:
+Certainly! Here is the English version of the README for a project related to train, airplane, and bus ticket reservation:
 
 # Project Name
 
-Ticket Reservation Project
+Transport Ticket Reservation
 
 ## Description
 
-This project is a ticket reservation system for an event (e.g., concert, theater, sports, etc.). With this system, users can reserve their desired tickets and view information about the event.
+This project is a ticket reservation system for various modes of transportation, including trains, airplanes, and buses. Users can use this system to search for available tickets, book seats, and manage their reservations.
 
 ## Features
 
 - User registration and login
-- Displaying a list of events
-- Searching for events by name or date
-- Displaying event details including description, date, venue, and ticket prices
-- Ticket reservation with specified quantity
-- Displaying reserved tickets for each user
+- Search for available tickets based on destination, date, and time
+- Display ticket options for trains, airplanes, and buses
+- Select seats or preferences for the chosen transportation mode
+- Reserve tickets and generate booking confirmations
+- Manage and view existing reservations
+- Cancel or modify reservations
 
 ## Installation and Setup
 
@@ -49,7 +50,7 @@ python app.py
 
 ## Contributing
 
-You can contribute to this project by improving its functionality. To contribute, please fork the repository and submit a pull request.
+Contributions to this project are welcome. To contribute, please fork the repository and submit a pull request.
 
 ## License
 
