@@ -1,4 +1,3 @@
-Certainly! Here is the English version of the README for a project related to train, airplane, and bus ticket reservation:
 
 # Ticket-Reservation
 
